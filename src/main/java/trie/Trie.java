@@ -124,6 +124,13 @@ public class Trie implements TrieInterface {
 			wildcardTraverse(pattern, prefix, root.children.get(pattern.charAt(len)), len + 1,
 					wildcardMatches);
 			prefix.deleteCharAt(prefix.length() - 1);
+
+			if (root.children.get('%') != null) {
+				prefix.append('%');
+				wildcardTraverse(pattern, prefix, root.children.get('%'), len + 1,
+						wildcardMatches);
+				prefix.deleteCharAt(prefix.length() - 1);
+			}
 		}
 	}
 
