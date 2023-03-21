@@ -11,7 +11,7 @@ public class Node {
 	/**
 	 * the children nodes of the node
 	 */
-	final Map<Character, Node> children;
+	final Map<String, Node> children;
 	/**
 	 * whether the node is an end of a word
 	 */
@@ -21,7 +21,7 @@ public class Node {
 		/*
 		 * 0 initial capacity to reduce memory use
 		 */
-		children = new HashMap<>(0);
+		children = new HashMap<String, Node>(0);
 		isEnd = false;
 	}
 
